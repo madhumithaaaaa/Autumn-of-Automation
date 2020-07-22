@@ -12,11 +12,14 @@ def is_prime(n):
 	else:
 		return 0
 
+text_file = open("myFirstFile.txt", "w")
+
 for k in range(10**(d-1), 10**d):
 	if is_prime(k)!=0:
 		if is_prime(k+2)!=0:
+			text_file.write("{}, {} \n".format(str(k), str(k+2)))
+			#print(k, k+2)
 
-			print(k, k+2)
+text_file.close()
 
-with open("myFirstFile.txt") as text_file:
-    print(k, k+2, file=text_file)
+
